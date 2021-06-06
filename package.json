@@ -1,0 +1,10 @@
+{
+    "scripts": {
+        "compile": "g++ main.cpp -w",
+        "run": "a.exe",
+        "comprun": "g++ main.cpp -w && a.exe AddState"
+    },
+    "dependencies": {
+        "watch": "^1.0.2"
+    }
+}
