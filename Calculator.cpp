@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include <string>
+#include <string.h>
 #include <stdio.h>
 #include "Arthmetic.cpp"
 #include "State.cpp"
@@ -8,27 +8,26 @@
 
 class Calculator{
     public:
-        string state;
+        State* state;
         Arthmetic*  arth;
         ArthFactory factory;
         int A,B;
 
-        Calculator(string s){
-            setState(s);
+        Calculator(char s[]){
+            manageState(s);
         }
 
         float calculate() {
             return arth -> compute(A,B);
         }
 
-        void setState(string s) {
-            
+        void setState(State *s) {
             state = s;
-            manageArth(state);
+            manageArth(state->getName());
         }
 
         void manageArth(string s){
-
+            //cout<<"DBG:manageArt"<<s<<endl;
             if ( s.compare("AddState") == 0 )
                 arth = factory.makeArth("Add");
             
@@ -44,27 +43,27 @@ class Calculator{
                 arth = factory.makeArth("Mul");
             
             else
-                cout<<"Undefined-State"<<endl;
+                cout<<"Undefined-State: "<<s<<endl;
                 
         }
 
-        void manageState(string s){
-            if ( s == "Add")
-                setState("AddState");
+        void manageState(char s[]){
+            if (strcmp(s,"AddState")  == 0)
+                setState(new AddState());
             
-            else if ( s == "Sub")
+            else if ( s == "SubState")
                 
-                setState("SubState");
+                setState(new SubState());
             
-            else if ( s == "Div")
+            else if ( s == "DivState")
                 
-               setState("DivState");
+               setState(new DivState());
             
-            if ( s == "Mul")
-                setState("MulState");
+            else if ( s == "MulState")
+                setState(new MulState());
             
             else
-                cout<<"Wrong Input"<<endl;
+                cout<<"Wrong Input: "<<strcmp(s,"AddState")<<endl;
                 
         }
 };

@@ -14,8 +14,8 @@ int main(int argc, char** argv){
     cout<<"\t\t=================\n\n"<<endl;
     cout<<"Initializing Calculator..."<<endl;
     Calculator CALC = Calculator(argv[1]);
-    sleep(2);
-    cout<<"Done...[Calculator State:"<<CALC.state<<"]"<<endl;
+    sleep(1);
+    cout<<"Done...[Calculator State:"<<CALC.state->getName()<<"]"<<endl;
     cout<<"Enter the first number"<<endl;
     cin>>a; CALC.A = a;
     cout<<"Enter the second number"<<endl;

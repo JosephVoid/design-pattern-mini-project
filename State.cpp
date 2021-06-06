@@ -4,11 +4,13 @@
 using namespace std;
 
 class State{
-    
-    public:
-        State () {}
+    private: 
         string name;
-        virtual void setName() = 0;
+    public:
+        State(){};
+        virtual ~State () {};
+        virtual void setName() {};
+        virtual string getName() {};
 
 };
 
@@ -20,6 +22,9 @@ class AddState: public State{
         };
         void setName(){
             name = "AddState";
+        }
+        string getName(){
+            return name;
         }
 
 };
