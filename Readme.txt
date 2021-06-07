@@ -1,5 +1,5 @@
 A Simple Calculator
-Done By: Yoseph Tenaw 1318/10
+Done By: Yoseph Tenaw ETS1318/10
 
 This mini-project employs 3 design patters. Factory Method, Facade Pattern and State Pattern.
 The code changes it behaviour(what it does) in each state(State Pattern).
