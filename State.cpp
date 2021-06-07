@@ -38,6 +38,9 @@ class SubState: public State{
         void setName(){
             name = "SubState";
         }
+        string getName(){
+            return name;
+        }
 };
 
 class MulState: public State{
@@ -49,6 +52,9 @@ class MulState: public State{
         void setName(){
             name = "MulState";
         }
+        string getName(){
+            return name;
+        }
 };
 
 class DivState: public State{
@@ -59,5 +65,8 @@ class DivState: public State{
         };
         void setName(){
             name = "DivState";
+        }
+        string getName(){
+            return name;
         }
 };

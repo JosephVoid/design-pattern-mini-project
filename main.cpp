@@ -9,11 +9,15 @@ using namespace std;
 
 int main(int argc, char** argv){
     int a,b;
+    Calculator CALC;
     cout<<"\t\t================="<<endl;
     cout<<"\t\t Simple Calculator \t\t"<<endl;
     cout<<"\t\t=================\n\n"<<endl;
     cout<<"Initializing Calculator..."<<endl;
-    Calculator CALC = Calculator(argv[1]);
+    if(argc > 1)
+        CALC = Calculator(argv[1]);
+    else
+        CALC = Calculator("AddState");
     sleep(1);
     cout<<"Done...[Calculator State:"<<CALC.state->getName()<<"]"<<endl;
     cout<<"Enter the first number"<<endl;

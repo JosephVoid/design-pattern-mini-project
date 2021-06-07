@@ -2,7 +2,7 @@
     "scripts": {
         "compile": "g++ main.cpp -w",
         "run": "a.exe",
-        "comprun": "g++ main.cpp -w && a.exe AddState"
+        "comprun": "g++ main.cpp -w && a.exe"
     },
     "dependencies": {
         "watch": "^1.0.2"

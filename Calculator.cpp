@@ -12,7 +12,7 @@ class Calculator{
         Arthmetic*  arth;
         ArthFactory factory;
         int A,B;
-
+        Calculator(){}
         Calculator(char s[]){
             manageState(s);
         }
@@ -21,7 +21,7 @@ class Calculator{
             return arth -> compute(A,B);
         }
 
-        void setState(State *s) {
+        void setState(State *s) {            
             state = s;
             manageArth(state->getName());
         }
@@ -51,15 +51,15 @@ class Calculator{
             if (strcmp(s,"AddState")  == 0)
                 setState(new AddState());
             
-            else if ( s == "SubState")
+            else if (strcmp(s,"SubState")  == 0)
                 
                 setState(new SubState());
             
-            else if ( s == "DivState")
+            else if (strcmp(s,"DivState")  == 0)
                 
                setState(new DivState());
             
-            else if ( s == "MulState")
+            else if (strcmp(s,"MulState")  == 0)
                 setState(new MulState());
             
             else
